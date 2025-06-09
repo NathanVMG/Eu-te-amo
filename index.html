@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para o amor da minha vida 💖</title>
+  <style>
+    body {
+      background-color: #f88379;
+      color: #2e2e2e;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .tela {
+      display: none;
+      text-align: center;
+      padding: 30px;
+      max-width: 400px;
+      background: #fff3f3;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .tela.ativa {
+      display: block;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ffe0e6;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #ffc4d0;
+    }
+    .heart {
+      font-size: 60px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tela ativa" id="tela1">
+    <h1>Oi, meu amor...</h1>
+    <button onclick="mostrarTela(2)">Clique aqui</button>
+  </div>
+
+  <div class="tela" id="tela2">
+    <p>Queria te dizer uma coisa importante...</p>
+    <p>Você é a pessoa mais incrível que já conheci 💕</p>
+    <p>E eu te amo mais do que qualquer coisa!</p>
+    <button onclick="mostrarTela(3)">Awnn 💌</button>
+  </div>
+
+  <div class="tela" id="tela3">
+    <div class="heart">❤️</div>
+    <p>Para sempre, com amor.</p>
+    <button onclick="mostrarTela(1)">Repetir 💖</button>
+  </div>
+
+  <script>
+    function mostrarTela(numero) {
+      for (let i = 1; i <= 3; i++) {
+        document.getElementById('tela' + i).classList.remove('ativa');
+      }
+      document.getElementById('tela' + numero).classList.add('ativa');
+    }
+  </script>
+</body>
+</html>
